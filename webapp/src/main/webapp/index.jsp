@@ -1,2 +1,3 @@
 hello ,jenkins
 this is vinod.
+used this job with Jenkinsfile. Happy......
