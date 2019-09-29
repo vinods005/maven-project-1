@@ -24,6 +24,8 @@ pipeline{
   }
 }
 
+   {
+	   
    stage ('deploy to tomcat'){
 
 
@@ -33,5 +35,5 @@ pipeline{
       }
    }
 }	
-
+}	   	   
 }
