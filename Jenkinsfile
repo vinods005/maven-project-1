@@ -6,7 +6,7 @@ pipeline{
   {
   
     stage ('SCM checkout') {
-       git 'https://github.com/vinods005/jenkins_pipeline_hello.git'
+       git 'https://github.com/vinods005/maven-project-1.git'
       }
    }
 
