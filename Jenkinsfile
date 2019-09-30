@@ -18,24 +18,22 @@ pipeline{
    
 	steps{
           withMaven(maven: 'Local Maven') {
-          sh 'mvn install'
+          sh 'mvn clean install'
           }
       }
   }
 }
 
-{
+   {
+	   
+   stage ('deploy to tomcat'){
 
-    stage ('Deploy Stage') {
-   
-   
-	   steps{
-            withMaven(maven: 'Local Maven') {
-            sh 'mvn deploy'
-          }
+
+        steps {
+           sshagent(['52.59.247.170']) {
+           sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@52.59.247.170:/var/lib/tomcat/webapps/'
       }
-  }
-
+   }
 }	
-	
+}	   	   
 }
