@@ -23,5 +23,16 @@ pipeline{
       }
   }
 }
+	
+stage ('Deploy Stage') {
+   
+   
+	steps{
+          withMaven(maven: 'Local Maven') {
+          sh 'mvn deploy'
+          }
+      }
+  }
+}	
 
 }
