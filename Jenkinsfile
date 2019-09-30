@@ -23,16 +23,19 @@ pipeline{
       }
   }
 }
-	
-stage ('Deploy Stage') {
+
+{
+
+    stage ('Deploy Stage') {
    
    
-	steps{
-          withMaven(maven: 'Local Maven') {
-          sh 'mvn deploy'
+	   steps{
+            withMaven(maven: 'Local Maven') {
+            sh 'mvn deploy'
           }
       }
   }
-}	
 
+}	
+	
 }
